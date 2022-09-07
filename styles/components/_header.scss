@@ -1,0 +1,10 @@
+.header {
+  width: 100%;
+  height: 70px;
+  
+  @extend %flex-between-center;
+
+  .navigation-list {
+    display: flex;
+  }
+}

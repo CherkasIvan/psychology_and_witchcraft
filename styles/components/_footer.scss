@@ -1,0 +1,36 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  @extend %flex-between-center;
+  height: 70px;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  opacity: 0.9;
+  filter: alpha(Opacity=90);
+
+  .requisites {
+    @extend %flex-between-center;
+
+    .links-list {
+      @extend %flex-between-center;
+
+      &__item {
+      }
+
+      &__link {
+        @extend %flex-center;
+        position: relative;
+        height: 48px;
+        padding-left: 50px;
+        cursor: pointer;
+      }
+
+
+    }
+  }
+}

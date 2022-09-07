@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  @extend %flex-center-center;
+}
+
+.wrapper {
+  width: 90%;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $N2 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $N2;
+  border-radius: 50px;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+}
