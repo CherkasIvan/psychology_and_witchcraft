@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <title>Psychology & Witchcraft</title>
   </head>
 
@@ -17,11 +23,15 @@
 
           <nav class="navigation">
             <ul class="navigation-list">
-              <li class="navigation-list__item"><a href="#">Обо мне</a></li>
-              <li class="navigation-list__item"><a href="#">С чем можно обратиться?</a></li>
-              <li class="navigation-list__item"><a href="#">Опыт</a></li>
-              <li class="navigation-list__item"><a href="#">Результаты клиентов</a></li>
-              <li class="navigation-list__item"><a href="#">Контакты</a></li>
+              <li class="navigation-list__item" tabindex="0"><a href="#">Обо мне</a></li>
+              <li class="navigation-list__item" tabindex="1">
+                <a href="#">С чем можно обратиться?</a>
+              </li>
+              <li class="navigation-list__item" tabindex="2"><a href="#">Опыт</a></li>
+              <li class="navigation-list__item" tabindex="3">
+                <a href="#">Результаты клиентов</a>
+              </li>
+              <li class="navigation-list__item" tabindex="4"><a href="#">Контакты</a></li>
             </ul>
           </nav>
         </header>
@@ -29,10 +39,84 @@
       <!-- header module ends -->
 
       <!-- main module starts -->
-      <main class="main">
-        <section></section>
-        <figure><img src="" alt="photo" /></figure>
-      </main>
+      <div class="wrapper">
+        <main class="main">
+          <section></section>
+          <figure><img src="" alt="photo" /></figure>
+
+          <!-- modal starts -->
+          <!-- Триггер/Открыть модальный -->
+          <button id="openForm" class="consultingButton">Записаться на консультацию</button>
+
+          <!-- Модальный -->
+          <container id="consultation" class="modal">
+            <!-- Модальное содержание -->
+            <form class="modal-content" name="consultingForm">
+              <header class="modal-content__header">
+                <h2 class="title">Форма записи на консультацию</h2>
+                <span class="close">&times;</span>
+              </header>
+
+              <main class="modal-content__body">
+                <div class="guest-data">
+                  <div class="guest-data__name">
+                    <input
+                      class="input-item"
+                      name="userName"
+                      placeholder="Ваше имя:"
+                      type="text"
+                      required
+                    />
+                    <p id="formNameError"></p>
+                  </div>
+
+                  <div class="guest-data__surname">
+                    <input
+                      class="input-item"
+                      name="userSurname"
+                      placeholder="Ваша фамилия:"
+                      type="text"
+                      required
+                    />
+                    <p id="formSurnameError"></p>
+                  </div>
+                </div>
+
+                <textarea
+                  class="input-item"
+                  name="userProblem"
+                  placeholder="Кратко опишите вашу проблему"
+                  type="text"
+                ></textarea>
+
+                <input
+                  class="input-item"
+                  name="userEmail"
+                  placeholder="Ваш E-Mail:"
+                  type="email"
+                  required
+                />
+                <p id="formEmailError"></p>
+
+                <input
+                  class="input-item"
+                  name="userPhone"
+                  placeholder="Ваш номер телефона:"
+                  type="phone"
+                  required
+                />
+                <p id="formPhoneError"></p>
+              </main>
+
+              <footer class="modal-content__footer">
+                <button id="cancel">Отменить</button>
+                <input type="submit" id="submit" value="Отправить" onclick="submitUserForm()" />
+              </footer>
+            </form>
+          </container>
+          <!-- modal ends -->
+        </main>
+      </div>
       <!-- main module ends -->
     </container>
 
@@ -49,23 +133,23 @@
 
             <ul class="links-list">
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--skype">1</a>
+                <a href="#" class="links-list__link links-list__link--facebook"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--whatsapp">2</a>
+                <a href="#" class="links-list__link links-list__link--viber"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--telegram">3</a>
+                <a href="#" class="links-list__link links-list__link--skype"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link-facebook">4</a>
+                <a href="#" class="links-list__link links-list__link--telegram"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--instagram">5</a>
+                <a href="#" class="links-list__link links-list__link--instagram"></a>
               </li>
             </ul>
 
@@ -79,6 +163,8 @@
       </div>
     </footer>
     <!-- footer module ends -->
+
+    <script src="./modal.js" async></script>
+    <script src="./index.js"></script>
   </body>
-  <script src="./index.js"></script>
 </html>

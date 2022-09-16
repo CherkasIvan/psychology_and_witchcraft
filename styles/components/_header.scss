@@ -1,10 +1,16 @@
 .header {
   width: 100%;
   height: 70px;
-  
+
   @extend %flex-between-center;
 
-  .navigation-list {
-    display: flex;
+  .navigation {
+    width: 50%;
+
+    .navigation-list {
+      display: flex;
+      justify-content: space-between;
+      font-family: "Roboto Condensed", sans-serif;
+    }
   }
 }
