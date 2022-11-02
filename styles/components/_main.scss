@@ -4,6 +4,17 @@
   display: flex;
   justify-content: space-between;
 
+  &__content {
+    height: 75%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &--photo {
+      height: 75%;
+    }
+  }
+
   #openForm {
     position: fixed;
     bottom: 100px;

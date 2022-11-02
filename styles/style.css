@@ -140,6 +140,15 @@ input[type=time]::-webkit-calendar-picker-indicator {
   display: flex;
   justify-content: space-between;
 }
+.main__content {
+  height: 75%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.main__content--photo {
+  height: 75%;
+}
 .main #openForm {
   position: fixed;
   bottom: 100px;
