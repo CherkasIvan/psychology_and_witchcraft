@@ -1,0 +1,37 @@
+.slider-container {
+  width: 600px;
+  background-color: pink;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  background-color: yellow;
+
+  &__item {
+    height: 100px;
+    min-width: 200px;
+  }
+
+  &__item:nth-child(3n + 1) {
+    background-color: red;
+  }
+
+  &__item:nth-child(3n + 2) {
+    background-color: green;
+  }
+
+  &__item:nth-child(3n + 3) {
+    background-color: blue;
+  }
+}
+
+.slider-buttons {
+  text-align: center;
+  > * {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+  }
+}

@@ -20,8 +20,6 @@ body {
   width: 100vw;
   font-size: 100%;
   line-height: 1;
-  overflow-y: hidden;
-  overflow-x: hidden;
 }
 
 input,
@@ -88,6 +86,7 @@ h4 {
 .container {
   width: 100%;
   flex-direction: column;
+  overflow: auto;
 }
 
 .wrapper {
@@ -136,18 +135,17 @@ input[type=time]::-webkit-calendar-picker-indicator {
 
 .main {
   position: relative;
-  height: 100vw;
   display: flex;
   justify-content: space-between;
 }
 .main__content {
-  height: 75%;
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 .main__content--photo {
   height: 75%;
+  max-height: 650px;
 }
 .main #openForm {
   position: fixed;
@@ -189,6 +187,40 @@ input[type=time]::-webkit-calendar-picker-indicator {
   box-shadow: 0 0 10px 0 #228BE6 inset, 0 0 10px 4px #228BE6;
 }
 
+.slider-container {
+  width: 600px;
+  background-color: pink;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  background-color: yellow;
+}
+.slider-track__item {
+  height: 100px;
+  min-width: 200px;
+}
+.slider-track__item:nth-child(3n+1) {
+  background-color: red;
+}
+.slider-track__item:nth-child(3n+2) {
+  background-color: green;
+}
+.slider-track__item:nth-child(3n+3) {
+  background-color: blue;
+}
+
+.slider-buttons {
+  text-align: center;
+}
+.slider-buttons > * {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
 /* Модальный (фон) */
 .modal {
   display: none;
@@ -217,7 +249,7 @@ input[type=time]::-webkit-calendar-picker-indicator {
   margin: 15% auto;
   /* 15% сверху и по центру */
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
   /* Может быть больше или меньше, в зависимости от размера экрана */
 }
 .modal-content__header {

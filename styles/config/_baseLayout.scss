@@ -2,6 +2,7 @@
   width: 100%;
   @extend %flex-center-center;
   flex-direction: column;
+  overflow: auto;
 }
 
 .wrapper {

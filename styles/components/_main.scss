@@ -1,17 +1,16 @@
 .main {
   position: relative;
-  height: 100vw;
   display: flex;
   justify-content: space-between;
 
   &__content {
-    height: 75%;
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 
     &--photo {
       height: 75%;
+      max-height: 650px;
     }
   }
 
