@@ -3,7 +3,9 @@
 @import "./config/mixins";
 @import "./config/baseLayout";
 
+@import "./components/loader";
 @import "./components/header";
 @import "./components/main";
+@import "./components/slider";
 @import "./components/modal";
 @import "./components/footer";
