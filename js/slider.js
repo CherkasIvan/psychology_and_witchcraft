@@ -1,5 +1,5 @@
 let position = 0;
-const slidesToShow = 4;
+const slidesToShow = 5;
 const slidesToScroll = 1;
 
 const container = document.querySelector(".slider-container");

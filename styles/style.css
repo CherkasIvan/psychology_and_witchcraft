@@ -89,6 +89,16 @@ h4 {
   overflow: auto;
 }
 
+.first-page-bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("../../assets/img/background_main_page.jpg") 0 0 no-repeat;
+  transform: rotate(180deg);
+}
+
 .wrapper {
   width: 90%;
 }
@@ -120,9 +130,70 @@ input[type=time]::-webkit-calendar-picker-indicator {
   background: none;
 }
 
+.mask {
+  width: 100%;
+  height: 100%;
+  background: darkgray;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+.mask .loader {
+  width: 75px;
+  height: 75px;
+  border: 10px solid #0d47a1;
+  border-radius: 50%;
+  border-left-color: green;
+  animation: loader 1.3s linear infinite;
+}
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide {
+  opacity: 0;
+}
+
 .header {
   width: 100%;
   height: 70px;
+}
+.header .burger {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.header .burger span, .header .burger span:before, .header .burger span:after {
+  width: 100%;
+  position: absolute;
+  height: 10px;
+  background: #333;
+  display: block;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.header .burger span:before {
+  content: "";
+  top: -20px;
+  transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.header .burger span {
+  top: 20px;
+}
+.header .burger span:after {
+  content: "";
+  bottom: -20px;
+  transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .header .navigation {
   width: 50%;
@@ -143,9 +214,13 @@ input[type=time]::-webkit-calendar-picker-indicator {
   justify-content: space-between;
   gap: 40px;
 }
-.main__content--photo {
-  height: 75%;
-  max-height: 650px;
+.main__content-photo {
+  width: 20vw;
+  min-width: 250px;
+}
+.main__content-text {
+  font-weight: normal;
+  font-size: 15px;
 }
 .main #openForm {
   position: fixed;
@@ -187,10 +262,20 @@ input[type=time]::-webkit-calendar-picker-indicator {
   box-shadow: 0 0 10px 0 #228BE6 inset, 0 0 10px 4px #228BE6;
 }
 
+@media (max-width: 669px) {
+  .main__content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .main__content-text {
+    font-weight: normal;
+    font-size: 12px;
+  }
+}
 .slider-container {
   width: 600px;
   background-color: pink;
-  margin: 0 auto;
+  margin: 20px auto;
   overflow: hidden;
 }
 

@@ -15,11 +15,21 @@
   </head>
 
   <body>
+    <!-- loader start -->
+    <div class="mask">
+      <div class="loader"></div>
+    </div>
+    <!-- loader end -->
+
     <!-- header module starts -->
-    <container class="container">
+    <container class="container first-page-bg">
       <div class="wrapper">
         <header class="header">
           <img src="" class="logo" alt="logo" />
+
+          <!-- <div class="burger">
+            <span></span>
+          </div> -->
 
           <nav class="navigation">
             <ul class="navigation-list">
@@ -42,7 +52,7 @@
       <div class="wrapper">
         <main class="main">
           <div class="main__content">
-            <section>
+            <p class="main__content-text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione cumque voluptatem
               quisquam et omnis iste debitis animi natus autem eos perspiciatis nihil reiciendis
               fugit sapiente nemo laudantium, illo accusamus? Fuga! Consectetur alias, temporibus
@@ -65,9 +75,9 @@
               Dolore nisi dicta quasi, repellat aperiam fugit earum quisquam alias animi laudantium.
               Accusamus dolorem repellat magnam tenetur cumque dolorum numquam ad, delectus ipsum
               quaerat eveniet doloribus neque labore tempore saepe!
-            </section>
+            </p>
             <figure>
-              <img class="main__content--photo" src="./assets/img/main.jpg" alt="photo" />
+              <img class="main__content-photo" src="./assets/img/main.jpg" alt="photo" />
             </figure>
           </div>
 
@@ -145,18 +155,19 @@
         </main>
       </div>
       <!-- main module ends -->
+      <!-- swiper-slider starts -->
       <div class="wrapper">
         <section class="slider-container">
           <div class="slider-track">
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
-            <div class="slider-track__item"></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
           </div>
         </section>
         <div class="slider-buttons">
@@ -164,6 +175,7 @@
           <button class="slider-button__prev">prev</button>
         </div>
       </div>
+      <!-- swiper-slider ends -->
     </container>
 
     <!-- footer module starts -->
@@ -211,6 +223,7 @@
     <!-- footer module ends -->
 
     <script src="./js/route.js" async></script>
+    <script src="./js/loader.js" async></script>
     <script src="./js/slider.js" async></script>
     <script src="./js/router.js" async></script>
     <script src="./js/modal.js" async></script>
