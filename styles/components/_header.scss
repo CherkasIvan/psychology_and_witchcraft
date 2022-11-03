@@ -4,38 +4,6 @@
 
   @extend %flex-between-center;
 
-  .burger{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
-  .burger span, .burger span:before, .burger span:after{
-    width: 100%;
-    position: absolute;
-    height: 10px;
-    background: #333;
-    display: block;
-    transition: .3s;
-    border-radius: 5px;
-  }
-  .burger span:before{
-    content: "";
-    top: -20px;
-    transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .burger span{
-    top: 20px;
-  }
-  .burger span:after{
-    content: "";
-    bottom: -20px;
-    transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-
   .navigation {
     width: 50%;
 
@@ -43,6 +11,81 @@
       display: flex;
       justify-content: space-between;
       font-family: "Roboto Condensed", sans-serif;
+    }
+  }
+}
+
+@media (max-width: 669px) {
+  .navigation {
+    display: none;
+  }
+
+  .navigation-burger {
+    height: 30px;
+    width: 30px;
+    position: relative;
+
+    &__item {
+      width: 30px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      background-color: black;
+      transition: all 0.2s;
+    }
+
+    &__item:nth-child(2) {
+      top: calc(50% + 5px);
+    }
+
+    &__item:nth-child(3) {
+      top: calc(50% - 5px);
+    }
+  }
+
+  .navigation-burger.active {
+    height: 30px;
+    width: 30px;
+    position: relative;
+
+    .navigation-burger__item:first-child {
+      display: none;
+    }
+
+    .navigation-burger__item:nth-child(2) {
+      top: calc(50%);
+      transform: rotate(45deg);
+    }
+
+    .navigation-burger__item:nth-child(3) {
+      top: calc(50%);
+      transform: rotate(-45deg);
+    }
+  }
+
+  .menu {
+    display: none;
+    transition: transform 0.5s;
+  }
+
+  .menu.active {
+    z-index: 1000;
+    position: fixed;
+    top: 7%;
+    right: 5%;
+    display: block;
+    transition: transform 0.5s;
+
+    .menu-navigation {
+      .menu-navigation-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        > * {
+          padding-top: 5px;
+        }
+      }
     }
   }
 }
