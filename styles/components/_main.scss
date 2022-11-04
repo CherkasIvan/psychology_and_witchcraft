@@ -1,0 +1,77 @@
+.main {
+  height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    &-photo {
+      width: 30vw;
+      min-width: 280px;
+    }
+    &-text {
+      font-weight: normal;
+      font-size: 15px;
+    }
+  }
+
+  #openForm {
+    position: fixed;
+    bottom: 100px;
+    right: 5%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid $blue;
+    border-radius: 0.6em;
+    color: $white;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    font-size: 0.8rem;
+    line-height: 1;
+    padding: 1em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  #openForm:hover {
+    outline: 0;
+    color: $blue;
+  }
+
+  .consultingButton {
+    // border-color: #3498db;
+    box-shadow: 0 0 40px 40px $blue inset, 0 0 0 0 $blue;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+  .consultingButton:hover {
+    box-shadow: 0 0 10px 0 $blue inset, 0 0 10px 4px $blue;
+  }
+}
+
+@media (max-width: 669px) {
+  .main__content {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+
+    &-text {
+      font-weight: normal;
+      font-size: 12px;
+    }
+  }
+}

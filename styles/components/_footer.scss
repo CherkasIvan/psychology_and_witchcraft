@@ -5,12 +5,12 @@
   @extend %flex-between-center;
   height: 70px;
   width: 100%;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgb(0, 0, 0); /* Цвет запасной вариант */
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.7);
   text-align: center;
   color: white;
   font-weight: bold;
-  opacity: 0.9;
   filter: alpha(Opacity=90);
 
   .requisites {
@@ -20,17 +20,49 @@
       @extend %flex-between-center;
 
       &__item {
+        padding-left: 20px;
       }
 
-      &__link {
+      &__link:link,
+      &__link:visited {
+        background-image: url(../../assets/img/social_media_links.svg);
+        background-repeat: no-repeat;
         @extend %flex-center;
         position: relative;
-        height: 48px;
-        padding-left: 50px;
+        height: 20px;
+        padding-left: 20px;
         cursor: pointer;
       }
 
+      &__link:hover {
+        background-image: url(../../assets/img/social_media_links__hover.svg);
+        background-repeat: no-repeat;
+        @extend %flex-center;
+        position: relative;
+        height: 20px;
+        padding-left: 20px;
+        cursor: pointer;
+      }
 
+      &__link--facebook {
+        background-position: -43px 0;
+      }
+
+      &__link--viber {
+        background-position: -90px 0;
+      }
+
+      &__link--skype {
+        background-position: 0 0;
+      }
+
+      &__link--telegram {
+        background-position: -24px 0;
+      }
+
+      &__link--instagram {
+        background-position: -69px 0;
+      }
     }
   }
 }

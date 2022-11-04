@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -19,8 +20,7 @@ body {
   width: 100vw;
   font-size: 100%;
   line-height: 1;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 input,
@@ -67,18 +67,18 @@ h4 {
   font-weight: inherit;
 }
 
-.footer .requisites .links-list__link {
+.footer .requisites .links-list__link:hover, .footer .requisites .links-list__link:link, .footer .requisites .links-list__link:visited {
   display: flex;
   align-items: center;
 }
 
-.footer .requisites .links-list, .footer .requisites, .footer, .header {
+.footer .requisites .links-list, .footer .requisites, .footer, .modal-content__body .guest-data, .modal-content__header, .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.container {
+.modal-content__footer, .container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,6 +86,67 @@ h4 {
 
 .container {
   width: 100%;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.about-page-bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+.problems-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: scale(-1, 1);
+}
+
+.experience-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 200%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+.reviews-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 300%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.info-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 400%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: rotate(180deg) scale(-1, 1);
 }
 
 .wrapper {
@@ -119,12 +180,308 @@ input[type=time]::-webkit-calendar-picker-indicator {
   background: none;
 }
 
+.mask {
+  width: 100%;
+  height: 100%;
+  background: darkgray;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+.mask .loader {
+  width: 75px;
+  height: 75px;
+  border: 10px solid #0d47a1;
+  border-radius: 50%;
+  border-left-color: green;
+  animation: loader 1.3s linear infinite;
+}
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide {
+  opacity: 0;
+}
+
 .header {
   width: 100%;
   height: 70px;
 }
-.header .navigation-list {
+.header .logo {
+  height: 50px;
+  width: 50px;
+}
+.header .menu {
+  display: none;
+  transition: transform 0.5s;
+}
+.header .navigation-burger {
+  display: none;
+}
+.header .navigation {
+  width: 50%;
+}
+.header .navigation .navigation-list {
   display: flex;
+  justify-content: space-between;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.header .navigation .navigation-list__item {
+  text-align: center;
+}
+
+@media (max-width: 669px) {
+  .header .navigation {
+    display: none;
+  }
+  .header .navigation-burger {
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: relative;
+  }
+  .header .navigation-burger__item {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    background-color: black;
+    transition: all 0.2s;
+  }
+  .header .navigation-burger__item:nth-child(2) {
+    top: calc(50% + 5px);
+  }
+  .header .navigation-burger__item:nth-child(3) {
+    top: calc(50% - 5px);
+  }
+  .header .navigation-burger.active {
+    height: 30px;
+    width: 30px;
+    position: relative;
+  }
+  .header .navigation-burger.active .navigation-burger__item:first-child {
+    display: none;
+  }
+  .header .navigation-burger.active .navigation-burger__item:nth-child(2) {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  .header .navigation-burger.active .navigation-burger__item:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+  .header .menu.active {
+    z-index: 1000;
+    position: fixed;
+    top: 9.5%;
+    right: 5%;
+    display: block;
+    transition: transform 0.5s;
+  }
+  .header .menu.active .menu-navigation .menu-navigation-list {
+    background: blue;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .header .menu.active .menu-navigation .menu-navigation-list > * {
+    padding-top: 5px;
+  }
+}
+.main {
+  height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.main__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.main__content-photo {
+  width: 30vw;
+  min-width: 280px;
+}
+.main__content-text {
+  font-weight: normal;
+  font-size: 15px;
+}
+.main #openForm {
+  position: fixed;
+  bottom: 100px;
+  right: 5%;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #228BE6;
+  border-radius: 0.6em;
+  color: #ffffff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  font-size: 0.8rem;
+  line-height: 1;
+  padding: 1em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.main #openForm:hover {
+  outline: 0;
+  color: #228BE6;
+}
+.main .consultingButton {
+  box-shadow: 0 0 40px 40px #228BE6 inset, 0 0 0 0 #228BE6;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.main .consultingButton:hover {
+  box-shadow: 0 0 10px 0 #228BE6 inset, 0 0 10px 4px #228BE6;
+}
+
+@media (max-width: 669px) {
+  .main__content {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .main__content-text {
+    font-weight: normal;
+    font-size: 12px;
+  }
+}
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 70%;
+  height: 100vh;
+  margin: 20px auto;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.slider-track {
+  display: flex;
+  transition: all 0.5s;
+}
+.slider-track__item {
+  height: 200px;
+  min-width: 100%;
+  margin: 15px;
+}
+.slider-track__item:nth-child(3n+1) {
+  background-color: red;
+}
+.slider-track__item:nth-child(3n+2) {
+  background-color: green;
+}
+.slider-track__item:nth-child(3n+3) {
+  background-color: blue;
+}
+
+.slider-buttons {
+  text-align: center;
+}
+.slider-buttons > * {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* Модальный (фон) */
+.modal {
+  display: none;
+  /* Скрыто по умолчанию */
+  position: fixed;
+  /* Оставаться на месте */
+  z-index: 1;
+  /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Полная ширина */
+  height: 100%;
+  /* Полная высота */
+  overflow: auto;
+  /* Включите прокрутку, если это необходимо */
+  background-color: black;
+  /* Цвет запасной вариант */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Черный с непрозрачностью */
+}
+
+/* Модальное содержание/коробка */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% сверху и по центру */
+  border: 1px solid #888;
+  width: 50%;
+  /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+.modal-content__header {
+  border-bottom: 1px solid #000;
+  /* Кнопка закрытия */
+}
+.modal-content__header > * {
+  margin: 20px;
+}
+.modal-content__header .close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal-content__header .close:hover,
+.modal-content__header .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content__body {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.modal-content__body .input-item {
+  padding: 10px;
+}
+.modal-content__body .invalid {
+  border-color: red;
+}
+.modal-content__body #formEmailError,
+.modal-content__body #formNameError,
+.modal-content__body #formSurnameError,
+.modal-content__body #formPhoneError {
+  color: red;
+}
+.modal-content__footer {
+  gap: 15px;
+  border-top: 1px solid #000;
+}
+.modal-content__footer > * {
+  min-width: 110px;
+  margin: 15px 0;
+  padding: 20px;
 }
 
 .footer {
@@ -134,18 +491,47 @@ input[type=time]::-webkit-calendar-picker-indicator {
   height: 70px;
   width: 100%;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.9);
+  /* Цвет запасной вариант */
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.7);
   text-align: center;
   color: white;
   font-weight: bold;
-  opacity: 0.9;
   filter: alpha(Opacity=90);
 }
-.footer .requisites .links-list__link {
+.footer .requisites .links-list__item {
+  padding-left: 20px;
+}
+.footer .requisites .links-list__link:link, .footer .requisites .links-list__link:visited {
+  background-image: url(../../assets/img/social_media_links.svg);
+  background-repeat: no-repeat;
   position: relative;
-  height: 48px;
-  padding-left: 50px;
+  height: 20px;
+  padding-left: 20px;
   cursor: pointer;
+}
+.footer .requisites .links-list__link:hover {
+  background-image: url(../../assets/img/social_media_links__hover.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  height: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.footer .requisites .links-list__link--facebook {
+  background-position: -43px 0;
+}
+.footer .requisites .links-list__link--viber {
+  background-position: -90px 0;
+}
+.footer .requisites .links-list__link--skype {
+  background-position: 0 0;
+}
+.footer .requisites .links-list__link--telegram {
+  background-position: -24px 0;
+}
+.footer .requisites .links-list__link--instagram {
+  background-position: -69px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

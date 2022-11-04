@@ -1,6 +1,68 @@
 .container {
   width: 100%;
   @extend %flex-center-center;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.about-page-bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+.problems-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: scale(-1, 1);
+}
+
+.experience-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 200%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+.reviews-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 300%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  // transform: rotate(180deg) ;
+}
+
+.info-page-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 400%;
+  z-index: -1;
+  background: url("../../assets/img/backgrounds/background_second_page.jpg") no-repeat center center;
+  background-size: cover;
+  transform: rotate(180deg) scale(-1, 1);
 }
 
 .wrapper {

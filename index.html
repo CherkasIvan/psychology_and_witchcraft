@@ -5,35 +5,239 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <title>Psychology & Witchcraft</title>
   </head>
 
   <body>
+    <!-- loader start -->
+    <div class="mask">
+      <div class="loader"></div>
+    </div>
+    <!-- loader end -->
+
     <!-- header module starts -->
     <container class="container">
       <div class="wrapper">
         <header class="header">
-          <img src="" class="logo" alt="logo" />
+          <img src="./assets/img/logo.png" class="logo" alt="logo" />
+
+          <menu class="menu">
+            <nav class="menu-navigation">
+              <ul class="menu-navigation-list">
+                <li class="menu-navigation-list__item" tabindex="0">
+                  <a href="#about">Обо мне</a>
+                </li>
+                <li class="menu-navigation-list__item" tabindex="1">
+                  <a href="#question">С чем можно обратиться?</a>
+                </li>
+                <li class="menu-navigation-list__item" tabindex="2">
+                  <a href="#experience">Опыт</a>
+                </li>
+                <li class="menu-navigation-list__item" tabindex="3">
+                  <a href="#results">Результаты клиентов</a>
+                </li>
+                <li class="menu-navigation-list__item" tabindex="4">
+                  <a href="#contacts">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </menu>
 
           <nav class="navigation">
             <ul class="navigation-list">
-              <li class="navigation-list__item"><a href="#">Обо мне</a></li>
-              <li class="navigation-list__item"><a href="#">С чем можно обратиться?</a></li>
-              <li class="navigation-list__item"><a href="#">Опыт</a></li>
-              <li class="navigation-list__item"><a href="#">Результаты клиентов</a></li>
-              <li class="navigation-list__item"><a href="#">Контакты</a></li>
+              <li class="navigation-list__item" tabindex="0"><a href="#about">Обо мне</a></li>
+              <li class="navigation-list__item" tabindex="1">
+                <a href="#question">С чем можно обратиться?</a>
+              </li>
+              <li class="navigation-list__item" tabindex="2"><a href="#experience">Опыт</a></li>
+              <li class="navigation-list__item" tabindex="3">
+                <a href="#results">Результаты клиентов</a>
+              </li>
+              <li class="navigation-list__item" tabindex="4"><a href="#contacts">Контакты</a></li>
             </ul>
+          </nav>
+
+          <nav class="navigation-burger">
+            <span class="navigation-burger__item"></span
+            ><span class="navigation-burger__item"></span
+            ><span class="navigation-burger__item"></span>
           </nav>
         </header>
       </div>
-      <!-- header module ends -->
+    </container>
+    <!-- header module ends -->
 
+    <container class="container about-page-bg">
       <!-- main module starts -->
-      <main class="main">
-        <section></section>
-        <figure><img src="" alt="photo" /></figure>
-      </main>
+      <div class="wrapper">
+        <main class="main">
+          <a name="about"></a>
+          <div class="main__content">
+            <p class="main__content-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione cumque voluptatem
+              quisquam et omnis iste debitis animi natus autem eos perspiciatis nihil reiciendis
+              fugit sapiente nemo laudantium, illo accusamus? Fuga! Consectetur alias, temporibus
+              rem asperiores molestiae, recusandae dolorem explicabo voluptatem ducimus sed animi
+              voluptatibus facere quod vel soluta dolore et qui facilis quibusdam cupiditate
+              laudantium rerum maiores? Inventore, quam? Animi. Laudantium necessitatibus vel
+              tenetur nihil molestias consectetur, minus et veritatis adipisci est facere odit
+              explicabo numquam molestiae nobis rem quidem ab illum neque possimus optio autem ullam
+              repudiandae deserunt. Aliquid? Tempora, voluptatem expedita quisquam deserunt quo eos
+              iste odit voluptas modi ab alias dolores quos officiis atque magni pariatur veniam
+              unde porro maxime ipsam nesciunt soluta, eius ipsum cumque. Aut! In temporibus commodi
+              at exercitationem reiciendis aliquam earum, sed quod harum quasi reprehenderit, odio
+              id dolore, inventore quia veniam enim! Alias unde odit placeat reiciendis velit odio
+              esse mollitia eligendi. Hic sequi aliquam eum dolores non ad ut aliquid obcaecati
+              perspiciatis saepe voluptate, odit ipsum, explicabo possimus debitis officia.
+              Voluptate fuga deleniti eum reprehenderit cumque incidunt, non ea itaque quia.
+              Veritatis eum accusamus quaerat. Doloribus nihil iure aspernatur architecto
+              repudiandae expedita sequi laborum quidem nostrum commodi ex mollitia dolores,
+              temporibus fuga, explicabo neque distinctio nam aperiam ratione inventore eum? Nisi!
+              Dolore nisi dicta quasi, repellat aperiam fugit earum quisquam alias animi laudantium.
+              Accusamus dolorem repellat magnam tenetur cumque dolorum numquam ad, delectus ipsum
+              quaerat eveniet doloribus neque labore tempore saepe!
+            </p>
+            <figure>
+              <img class="main__content-photo" src="./assets/img/main.jpg" alt="photo" />
+            </figure>
+          </div>
+
+          <!-- modal starts -->
+          <!-- Триггер/Открыть модальный -->
+          <button id="openForm" class="consultingButton">Записаться на консультацию</button>
+
+          <!-- Модальный -->
+          <container id="consultation" class="modal">
+            <!-- Модальное содержание -->
+            <form class="modal-content" name="consultingForm">
+              <header class="modal-content__header">
+                <h2 class="title">Форма записи на консультацию</h2>
+                <span class="close">&times;</span>
+              </header>
+
+              <main class="modal-content__body">
+                <div class="guest-data">
+                  <div class="guest-data__name">
+                    <input
+                      class="input-item"
+                      name="userName"
+                      placeholder="Ваше имя:"
+                      type="text"
+                      required
+                    />
+                    <p id="formNameError"></p>
+                  </div>
+
+                  <div class="guest-data__surname">
+                    <input
+                      class="input-item"
+                      name="userSurname"
+                      placeholder="Ваша фамилия:"
+                      type="text"
+                      required
+                    />
+                    <p id="formSurnameError"></p>
+                  </div>
+                </div>
+
+                <textarea
+                  class="input-item"
+                  name="userProblem"
+                  placeholder="Кратко опишите вашу проблему"
+                  type="text"
+                ></textarea>
+
+                <input
+                  class="input-item"
+                  name="userEmail"
+                  placeholder="Ваш E-Mail:"
+                  type="email"
+                  required
+                />
+                <p id="formEmailError"></p>
+
+                <input
+                  class="input-item"
+                  name="userPhone"
+                  placeholder="Ваш номер телефона:"
+                  type="phone"
+                  required
+                />
+                <p id="formPhoneError"></p>
+              </main>
+
+              <footer class="modal-content__footer">
+                <button id="cancel">Отменить</button>
+                <input type="submit" id="submit" value="Отправить" onclick="submitUserForm()" />
+              </footer>
+            </form>
+          </container>
+          <!-- modal ends -->
+        </main>
+      </div>
       <!-- main module ends -->
+    </container>
+
+    <container class="container problems-page-bg">
+      <!-- swiper-slider starts -->
+      <div class="wrapper">
+        <section class="slider-container">
+          <a name="question"></a>
+          <div class="slider-track">
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+            <div class="slider-track__item"><a href=""></a></div>
+          </div>
+
+          <div class="slider-buttons">
+            <button class="slider-button__next">next</button>
+            <button class="slider-button__prev">prev</button>
+          </div>
+        </section>
+      </div>
+      <!-- swiper-slider ends -->
+    </container>
+
+    <container class="container experience-page-bg">
+      <!-- swiper-slider starts -->
+      <div class="wrapper">
+        <section class="slider-container">
+          <a name="experience"></a>
+        </section>
+      </div>
+      <!-- swiper-slider ends -->
+    </container>
+
+    <container class="container reviews-page-bg">
+      <!-- swiper-slider starts -->
+      <div class="wrapper">
+        <section class="slider-container">
+          <a name="results"></a>
+        </section>
+      </div>
+      <!-- swiper-slider ends -->
+    </container>
+
+    <container class="container info-page-bg">
+      <!-- swiper-slider starts -->
+      <div class="wrapper">
+        <section class="slider-container">
+          <a name="contacts"></a>
+        </section>
+      </div>
+      <!-- swiper-slider ends -->
     </container>
 
     <!-- footer module starts -->
@@ -49,23 +253,23 @@
 
             <ul class="links-list">
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--skype">1</a>
+                <a href="#" class="links-list__link links-list__link--facebook"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--whatsapp">2</a>
+                <a href="#" class="links-list__link links-list__link--viber"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--telegram">3</a>
+                <a href="#" class="links-list__link links-list__link--skype"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link-facebook">4</a>
+                <a href="#" class="links-list__link links-list__link--telegram"></a>
               </li>
 
               <li class="links-list__item">
-                <a href="#" class="links-list__link links-list__link--instagram">5</a>
+                <a href="#" class="links-list__link links-list__link--instagram"></a>
               </li>
             </ul>
 
@@ -79,6 +283,12 @@
       </div>
     </footer>
     <!-- footer module ends -->
+    <script src="./js/index.js" async></script>
+    <script src="./js/components/header.js" async></script>
+    <script src="./js/route.js" async></script>
+    <script src="./js/loader.js" async></script>
+    <script src="./js/slider.js" async></script>
+    <script src="./js/router.js" async></script>
+    <script src="./js/modal.js" async></script>
   </body>
-  <script src="./index.js"></script>
 </html>
