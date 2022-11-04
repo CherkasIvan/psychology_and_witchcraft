@@ -1,17 +1,22 @@
 .slider-container {
-  width: 600px;
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 70%;
+  height: 100vh;
   margin: 20px auto;
   overflow: hidden;
+  z-index: 2;
 }
 
 .slider-track {
   display: flex;
-  background-color: yellow;
+  transition: all 0.5s;
 
   &__item {
-    height: 100px;
-    min-width: 200px;
+    height: 200px;
+    min-width: 100%;
+    margin: 15px;
   }
 
   &__item:nth-child(3n + 1) {

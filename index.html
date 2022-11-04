@@ -22,10 +22,10 @@
     <!-- loader end -->
 
     <!-- header module starts -->
-    <container class="container first-page-bg">
+    <container class="container">
       <div class="wrapper">
         <header class="header">
-          <img src="" class="logo" alt="logo" />
+          <img src="./assets/img/logo.png" class="logo" alt="logo" />
 
           <menu class="menu">
             <nav class="menu-navigation">
@@ -70,11 +70,14 @@
           </nav>
         </header>
       </div>
-      <!-- header module ends -->
+    </container>
+    <!-- header module ends -->
 
+    <container class="container about-page-bg">
       <!-- main module starts -->
       <div class="wrapper">
         <main class="main">
+          <a name="about"></a>
           <div class="main__content">
             <p class="main__content-text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione cumque voluptatem
@@ -179,9 +182,13 @@
         </main>
       </div>
       <!-- main module ends -->
+    </container>
+
+    <container class="container problems-page-bg">
       <!-- swiper-slider starts -->
       <div class="wrapper">
         <section class="slider-container">
+          <a name="question"></a>
           <div class="slider-track">
             <div class="slider-track__item"><a href=""></a></div>
             <div class="slider-track__item"><a href=""></a></div>
@@ -193,11 +200,42 @@
             <div class="slider-track__item"><a href=""></a></div>
             <div class="slider-track__item"><a href=""></a></div>
           </div>
+
+          <div class="slider-buttons">
+            <button class="slider-button__next">next</button>
+            <button class="slider-button__prev">prev</button>
+          </div>
         </section>
-        <div class="slider-buttons">
-          <button class="slider-button__next">next</button>
-          <button class="slider-button__prev">prev</button>
-        </div>
+      </div>
+      <!-- swiper-slider ends -->
+    </container>
+
+    <container class="container experience-page-bg">
+      <!-- swiper-slider starts -->
+      <div class="wrapper">
+        <section class="slider-container">
+          <a name="experience"></a>
+        </section>
+      </div>
+      <!-- swiper-slider ends -->
+    </container>
+
+    <container class="container reviews-page-bg">
+      <!-- swiper-slider starts -->
+      <div class="wrapper">
+        <section class="slider-container">
+          <a name="results"></a>
+        </section>
+      </div>
+      <!-- swiper-slider ends -->
+    </container>
+
+    <container class="container info-page-bg">
+      <!-- swiper-slider starts -->
+      <div class="wrapper">
+        <section class="slider-container">
+          <a name="contacts"></a>
+        </section>
       </div>
       <!-- swiper-slider ends -->
     </container>
@@ -246,6 +284,7 @@
     </footer>
     <!-- footer module ends -->
     <script src="./js/index.js" async></script>
+    <script src="./js/components/header.js" async></script>
     <script src="./js/route.js" async></script>
     <script src="./js/loader.js" async></script>
     <script src="./js/slider.js" async></script>
