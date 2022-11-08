@@ -14,14 +14,17 @@
 
 /* Модальное содержание/коробка */
 .modal-content {
-  background-color: #fefefe;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   margin: 15% auto; /* 15% сверху и по центру */
   border: 1px solid #888;
+  border-radius: 8px;
   width: 50%; /* Может быть больше или меньше, в зависимости от размера экрана */
 
   // Шапка модальной таблицы
   &__header {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #888;
     @extend %flex-between-center;
 
     > * {
@@ -50,6 +53,10 @@
     margin: 20px;
 
     .input-item {
+      background: rgba(255, 255, 255, 0.1);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
       padding: 10px;
     }
 
@@ -72,13 +79,14 @@
   &__footer {
     @extend %flex-center-center;
     gap: 15px;
-
-    border-top: 1px solid #000;
+    border-top: 1px solid #888;
 
     > * {
       min-width: 110px;
       margin: 15px 0;
-      padding: 20px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-transform: uppercase;
     }
   }
 }
