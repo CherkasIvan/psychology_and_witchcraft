@@ -67,6 +67,12 @@ h4 {
   font-weight: inherit;
 }
 
+svg path {
+  stroke: inherit;
+  stroke-width: inherit;
+  fill: inherit;
+}
+
 .footer .requisites .links-list__link:hover, .footer .requisites .links-list__link:link, .footer .requisites .links-list__link:visited {
   display: flex;
   align-items: center;
@@ -211,6 +217,12 @@ input[type=time]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 
+.header-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
 .header {
   width: 100%;
   height: 70px;
@@ -236,6 +248,14 @@ input[type=time]::-webkit-calendar-picker-indicator {
 }
 .header .navigation .navigation-list__item {
   text-align: center;
+}
+.header .navigation .navigation-list__item > a,
+.header .navigation .navigation-list__item a:visited {
+  color: #4cb1d9;
+}
+.header .navigation .navigation-list__item > a:hover,
+.header .navigation .navigation-list__item a:active {
+  color: #574bff;
 }
 
 @media (max-width: 669px) {
@@ -282,23 +302,76 @@ input[type=time]::-webkit-calendar-picker-indicator {
   .header .menu.active {
     z-index: 1000;
     position: fixed;
-    top: 9.5%;
-    right: 5%;
+    top: 11.5%;
+    left: 5%;
     display: block;
     transition: transform 0.5s;
   }
   .header .menu.active .menu-navigation .menu-navigation-list {
-    background: blue;
-    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
   }
   .header .menu.active .menu-navigation .menu-navigation-list > * {
-    padding-top: 5px;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  .header .menu.active .menu-navigation .menu-navigation-list__item {
+    width: 100%;
+    height: 100%;
+  }
+  .header .menu.active .menu-navigation .menu-navigation-list__item > a,
+.header .menu.active .menu-navigation .menu-navigation-list__item a:visited {
+    color: #4cb1d9;
+  }
+  .header .menu.active .menu-navigation .menu-navigation-list__item > a:hover,
+.header .menu.active .menu-navigation .menu-navigation-list__item a:active {
+    color: #574bff;
+  }
+  .header .menu.active .menu-navigation .menu-navigation-list__item:not(:first-child) {
+    border-top: 1px solid rgba(85, 85, 85, 0.5);
   }
 }
+.info-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 20px auto;
+  overflow: hidden;
+  z-index: 2;
+}
+.info-page .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-color: #3498db;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+.info-page .home .topbutton__arrow-up {
+  width: 30px;
+  margin-bottom: 5px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(91deg) brightness(109%) contrast(101%);
+}
+.info-page .home:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+.info-page .home:hover .topbutton__arrow-up {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
 .main {
   height: 90vh;
   position: relative;
@@ -432,15 +505,18 @@ input[type=time]::-webkit-calendar-picker-indicator {
 
 /* Модальное содержание/коробка */
 .modal-content {
-  background-color: #fefefe;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   margin: 15% auto;
   /* 15% сверху и по центру */
   border: 1px solid #888;
+  border-radius: 8px;
   width: 50%;
   /* Может быть больше или меньше, в зависимости от размера экрана */
 }
 .modal-content__header {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #888;
   /* Кнопка закрытия */
 }
 .modal-content__header > * {
@@ -463,6 +539,10 @@ input[type=time]::-webkit-calendar-picker-indicator {
   margin: 20px;
 }
 .modal-content__body .input-item {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
   padding: 10px;
 }
 .modal-content__body .invalid {
@@ -476,12 +556,14 @@ input[type=time]::-webkit-calendar-picker-indicator {
 }
 .modal-content__footer {
   gap: 15px;
-  border-top: 1px solid #000;
+  border-top: 1px solid #888;
 }
 .modal-content__footer > * {
   min-width: 110px;
   margin: 15px 0;
-  padding: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
 }
 
 .footer {
